@@ -12,13 +12,6 @@ export const generatePlugins = ({
   return [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
-    '@semantic-release/changelog',
-    [
-      '@semantic-release/exec',
-      {
-        prepareCmd: 'npx prettier --write CHANGELOG.md',
-      },
-    ],
     ...(isNodeModule === true
       ? [
           [
@@ -33,7 +26,6 @@ export const generatePlugins = ({
       '@semantic-release/git',
       {
         assets: [
-          './CHANGELOG.md',
           ...commitAssets,
           ...(isNodeModule
             ? ['./package.json', './package-lock.json', './yarn-lock.yaml']

@@ -4,18 +4,10 @@ exports[`generatePlugins configures the git plugin to commit the specified asset
 Array [
   "@semantic-release/commit-analyzer",
   "@semantic-release/release-notes-generator",
-  "@semantic-release/changelog",
-  Array [
-    "@semantic-release/exec",
-    Object {
-      "prepareCmd": "npx prettier --write CHANGELOG.md",
-    },
-  ],
   Array [
     "@semantic-release/git",
     Object {
       "assets": Array [
-        "./CHANGELOG.md",
         "./src",
       ],
       "message": "chore(release): v\${nextRelease.version}",
@@ -37,13 +29,6 @@ exports[`generatePlugins configures the git plugin to commit the updated package
 Array [
   "@semantic-release/commit-analyzer",
   "@semantic-release/release-notes-generator",
-  "@semantic-release/changelog",
-  Array [
-    "@semantic-release/exec",
-    Object {
-      "prepareCmd": "npx prettier --write CHANGELOG.md",
-    },
-  ],
   Array [
     "@semantic-release/npm",
     Object {
@@ -54,7 +39,6 @@ Array [
     "@semantic-release/git",
     Object {
       "assets": Array [
-        "./CHANGELOG.md",
         "./package.json",
         "./package-lock.json",
         "./yarn-lock.yaml",
@@ -78,19 +62,10 @@ exports[`generatePlugins configures the git plugin to omit committing the update
 Array [
   "@semantic-release/commit-analyzer",
   "@semantic-release/release-notes-generator",
-  "@semantic-release/changelog",
-  Array [
-    "@semantic-release/exec",
-    Object {
-      "prepareCmd": "npx prettier --write CHANGELOG.md",
-    },
-  ],
   Array [
     "@semantic-release/git",
     Object {
-      "assets": Array [
-        "./CHANGELOG.md",
-      ],
+      "assets": Array [],
       "message": "chore(release): v\${nextRelease.version}",
     },
   ],
@@ -110,19 +85,10 @@ exports[`generatePlugins configures the github plugin to release the specified a
 Array [
   "@semantic-release/commit-analyzer",
   "@semantic-release/release-notes-generator",
-  "@semantic-release/changelog",
-  Array [
-    "@semantic-release/exec",
-    Object {
-      "prepareCmd": "npx prettier --write CHANGELOG.md",
-    },
-  ],
   Array [
     "@semantic-release/git",
     Object {
-      "assets": Array [
-        "./CHANGELOG.md",
-      ],
+      "assets": Array [],
       "message": "chore(release): v\${nextRelease.version}",
     },
   ],
@@ -144,13 +110,6 @@ exports[`generatePlugins configures the npm plugin to bump the package versions 
 Array [
   "@semantic-release/commit-analyzer",
   "@semantic-release/release-notes-generator",
-  "@semantic-release/changelog",
-  Array [
-    "@semantic-release/exec",
-    Object {
-      "prepareCmd": "npx prettier --write CHANGELOG.md",
-    },
-  ],
   Array [
     "@semantic-release/npm",
     Object {
@@ -161,7 +120,6 @@ Array [
     "@semantic-release/git",
     Object {
       "assets": Array [
-        "./CHANGELOG.md",
         "./package.json",
         "./package-lock.json",
         "./yarn-lock.yaml",
@@ -185,19 +143,10 @@ exports[`generatePlugins excludes the npm plugin when called with the isNodeModu
 Array [
   "@semantic-release/commit-analyzer",
   "@semantic-release/release-notes-generator",
-  "@semantic-release/changelog",
-  Array [
-    "@semantic-release/exec",
-    Object {
-      "prepareCmd": "npx prettier --write CHANGELOG.md",
-    },
-  ],
   Array [
     "@semantic-release/git",
     Object {
-      "assets": Array [
-        "./CHANGELOG.md",
-      ],
+      "assets": Array [],
       "message": "chore(release): v\${nextRelease.version}",
     },
   ],
