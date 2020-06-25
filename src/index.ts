@@ -3,7 +3,6 @@ import { Config, Options, Result } from 'semantic-release';
 
 import { generatePlugins } from './utilities/generatePlugins';
 import {
-  processInputChangelog,
   processInputCommitAssets,
   processInputDryRun,
   processInputNodeModule,
@@ -47,7 +46,6 @@ export const release = async (): Promise<void> => {
     parserOpts: parseOptions,
     plugins: generatePlugins({
       commitAssets: processInputCommitAssets(),
-      isChangelog: processInputChangelog(),
       isNodeModule: processInputNodeModule(),
       releaseAssets: processInputReleaseAssets(),
     }),

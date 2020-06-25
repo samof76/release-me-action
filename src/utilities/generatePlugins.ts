@@ -2,12 +2,10 @@ import { PluginSpec } from 'semantic-release';
 
 export const generatePlugins = ({
   commitAssets,
-  isChangelog,
   isNodeModule,
   releaseAssets,
 }: {
   commitAssets: string[];
-  isChangelog: boolean;
   isNodeModule: boolean;
   releaseAssets: string[];
 }): PluginSpec[] => {
@@ -15,16 +13,12 @@ export const generatePlugins = ({
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
-    ...(isChangelog === true
-      ? [
-          [
-            '@semantic-release/exec',
-            {
-              prepareCmd: 'npx prettier --write CHANGELOG.md',
-            },
-          ] as PluginSpec,
-        ]
-      : []),
+    [
+      '@semantic-release/exec',
+      {
+        prepareCmd: 'npx prettier --write CHANGELOG.md',
+      },
+    ],
     ...(isNodeModule === true
       ? [
           [
@@ -39,7 +33,7 @@ export const generatePlugins = ({
       '@semantic-release/git',
       {
         assets: [
-          isChangelog === true ? './CHANGELOG.md' : '',
+          './CHANGELOG.md',
           ...commitAssets,
           ...(isNodeModule
             ? ['./package.json', './package-lock.json', './yarn-lock.yaml']

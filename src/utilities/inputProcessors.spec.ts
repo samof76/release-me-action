@@ -1,7 +1,6 @@
 import * as actionsCore from '@actions/core';
 
 import {
-  processInputChangelog,
   processInputCommitAssets,
   processInputDryRun,
   processInputNodeModule,
@@ -19,18 +18,6 @@ describe('processInputNodeModule', (): void => {
     getInputSpy.mockReturnValue('true');
 
     const result = processInputNodeModule();
-
-    expect(result).toStrictEqual(true);
-  });
-});
-
-describe('processInputChangelog', (): void => {
-  it("returns true when the value of the changelog input is set to 'true'", (): void => {
-    expect.assertions(1);
-
-    getInputSpy.mockReturnValue('true');
-
-    const result = processInputChangelog();
 
     expect(result).toStrictEqual(true);
   });
