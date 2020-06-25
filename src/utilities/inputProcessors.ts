@@ -6,6 +6,7 @@ enum InputParameters {
   CommitAssets = 'commit-assets',
   DryRun = 'dry-run',
   NodeModule = 'node-module',
+  Changelog = 'changelog',
   ReleaseAssets = 'release-assets',
   ReleaseBranches = 'release-branches',
   ReleaseRules = 'release-rules',
@@ -128,6 +129,9 @@ const validateInputReleaseRules = (input: ReleaseRule[]): ReleaseRule[] => {
 
 export const processInputNodeModule = (): boolean =>
   getInput(InputParameters.NodeModule) === 'true';
+
+export const processInputChangelog = (): boolean =>
+  getInput(InputParameters.Changelog) === 'true';
 
 export const processInputDryRun = (): boolean =>
   getInput(InputParameters.DryRun) === 'true';

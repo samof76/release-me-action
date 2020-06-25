@@ -18,6 +18,10 @@ inputs:
       Bumps the package version and updates the repository package.json and
       package-lock.json or yarn-lock.yaml.
     required: false
+  changelog:
+    default: 'false'
+    description: Creates a changelog file only if set to true
+    required: false
   release-assets:
     description:
       Configures the list of assets to attach to the release alongside the
